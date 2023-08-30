@@ -17,8 +17,8 @@ services:
     image: lacoll87/kittygram_backend
     env_file: .env
     volumes:
-      - static_volume:/backend_static
-      - media_volume:/app/media
+      - static_kitty:/backend_static
+      - media_kitty:/app/media
     depends_on:
       - db
 
