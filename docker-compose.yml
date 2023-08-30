@@ -10,7 +10,7 @@ services:
     image: postgres:13
     env_file: .env
     volumes:
-      - pg_data_new:/var/lib/postgresql/data
+      - pg_data_kitty:/var/lib/postgresql/data
 
   backend:
     build: ./backend/

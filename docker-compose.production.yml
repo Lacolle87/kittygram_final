@@ -11,7 +11,7 @@ services:
     image: postgres:13
     env_file: .env
     volumes:
-      - pg_data_kat:/var/lib/postgresql/data
+      - pg_data_kitty:/var/lib/postgresql/data
 
   backend:
     image: lacoll87/kittygram_backend
