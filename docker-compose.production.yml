@@ -14,7 +14,7 @@ services:
       - pg_data_kitty:/var/lib/postgresql/data
 
   backend:
-    image: lacoll87/kittygram_backend
+    image: lacolle87/kittygram_backend
     env_file: .env
     volumes:
       - static_kitty:/backend_static
