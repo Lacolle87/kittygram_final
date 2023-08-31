@@ -2,8 +2,8 @@ version: '3'
 
 volumes:
   pg_data_kitty:
-  static_kitty:
-  media_kitty:
+  static:
+  media:
 
 
 services:
@@ -17,8 +17,8 @@ services:
     image: lacolle87/kittygram_backend
     env_file: .env
     volumes:
-      - static_kitty:/backend_static
-      - media_kitty:/app/media
+      - static:/backend_static
+      - media:/app/media
     depends_on:
       - db
 
@@ -26,13 +26,13 @@ services:
     image: lacolle87/kittygram_frontend
     command: cp -r /app/build/. /static/
     volumes:
-      - static_kitty:/static
+      - static:/static
 
   gateway:
     image: lacolle87/kittygram_gateway
     volumes:
-      - static_kitty:/static
-      - media_kitty:/media
+      - static:/static
+      - media:/media
     ports:
       - 9000:80
     depends_on:
